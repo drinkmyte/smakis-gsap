@@ -29,10 +29,10 @@ export default function FlavorCard({ flavor }: FlavorCardProps) {
 
       {/* Spinning badge */}
       <div
-        className="absolute -top-4 -right-4 w-16 h-16 bg-brand rounded-full flex items-center justify-center"
+        className="absolute -top-4 -right-4 w-20 h-20 bg-brand rounded-full flex items-center justify-center"
         style={{ animation: 'spin 20s linear infinite' }}
       >
-        <span className="font-bebas text-[10px] text-bg text-center leading-tight">
+        <span className="font-bebas text-sm text-bg text-center leading-tight tracking-wide">
           100%<br />Frukt
         </span>
       </div>

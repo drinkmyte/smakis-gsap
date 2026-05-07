@@ -21,7 +21,7 @@ export default function ValuesSection() {
     const parallaxTweens = Array.from(words).map((el, i) => {
       const speed = VALUES[i].speed * (isMobile ? 0.5 : 1)
       return gsap.to(el, {
-        y: speed * 300,
+        y: speed * 80,
         ease: 'none',
         scrollTrigger: {
           trigger: sectionRef.current,
@@ -76,7 +76,7 @@ export default function ValuesSection() {
       id="values"
       className="min-h-screen flex flex-col items-center justify-center bg-dark text-bg px-8 py-24 overflow-hidden"
     >
-      <div ref={wordsRef} className="flex flex-col items-center gap-4 text-center">
+      <div ref={wordsRef} className="flex flex-col items-center gap-12 text-center">
         {VALUES.map((value) => (
           <p
             key={value.label}
