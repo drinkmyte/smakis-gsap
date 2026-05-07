@@ -13,14 +13,14 @@ export default function BrandStatement() {
   const subRef = useRef<HTMLParagraphElement>(null)
 
   useEffect(() => {
-    if (!headlineRef.current || !subRef.current) return
+    if (!headlineRef.current || !subRef.current || !sectionRef.current) return
 
     const split = new SplitText(headlineRef.current, { type: 'chars' })
 
     // Shuffle chars for random-order "scratchy" skate reveal
     const shuffled = [...split.chars].sort(() => Math.random() - 0.5)
 
-    gsap.from(shuffled, {
+    const tweenA = gsap.from(shuffled, {
       yPercent: 150,
       opacity: 0,
       ease: 'back.out(1.7)',
@@ -30,10 +30,11 @@ export default function BrandStatement() {
         trigger: sectionRef.current,
         start: 'top 70%',
         scrub: false,
+        once: true,
       },
     })
 
-    gsap.from(subRef.current, {
+    const tweenB = gsap.from(subRef.current, {
       opacity: 0,
       y: 30,
       ease: 'back.out(1.4)',
@@ -43,12 +44,16 @@ export default function BrandStatement() {
         trigger: sectionRef.current,
         start: 'top 60%',
         scrub: false,
+        once: true,
       },
     })
 
     return () => {
       split.revert()
-      ScrollTrigger.getAll().forEach(t => t.kill())
+      tweenA.scrollTrigger?.kill()
+      tweenB.scrollTrigger?.kill()
+      tweenA.kill()
+      tweenB.kill()
     }
   }, [])
 
@@ -60,8 +65,7 @@ export default function BrandStatement() {
     >
       <h2
         ref={headlineRef}
-        className="font-bebas text-[12vw] md:text-[8vw] leading-none text-dark hatched select-none"
-        style={{ overflow: 'hidden' }}
+        className="font-bebas text-[12vw] md:text-[8vw] leading-none text-dark hatched select-none overflow-hidden"
       >
         Smakis är det snälla varumärket
       </h2>
