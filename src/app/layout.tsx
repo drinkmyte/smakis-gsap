@@ -10,8 +10,8 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="sv" style={{ backgroundColor: 'var(--color-bg)' }}>
-      <body style={{ overflow: 'hidden' }}>
+    <html lang="sv">
+      <body className="bg-bg overflow-hidden">
         <GrainOverlay />
         <SmoothWrapper>
           {children}
