@@ -15,13 +15,13 @@ export default function Navbar() {
   useEffect(() => {
     if (!navRef.current) return
     gsap.set(navRef.current, { opacity: 0 })
-    ScrollTrigger.create({
+    const st = ScrollTrigger.create({
       trigger: '#hero',
       start: 'bottom 80%',
       onEnter: () => gsap.to(navRef.current, { opacity: 1, duration: 0.4 }),
       onLeaveBack: () => gsap.to(navRef.current, { opacity: 0, duration: 0.3 }),
     })
-    return () => ScrollTrigger.getAll().forEach(t => t.kill())
+    return () => st.kill()
   }, [])
 
   return (
