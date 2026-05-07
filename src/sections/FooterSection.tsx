@@ -23,6 +23,7 @@ export default function FooterSection() {
           href="https://www.instagram.com/smakis"
           target="_blank"
           rel="noopener noreferrer"
+          aria-label="Följ Smakis på Instagram (öppnas i ny flik)"
           className="hover:text-brand transition-colors"
         >
           @smakis
