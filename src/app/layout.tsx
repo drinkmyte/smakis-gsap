@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
 import './globals.css'
-import SmoothWrapper from '@/components/SmoothWrapper'
 import GrainOverlay from '@/components/GrainOverlay'
 
 export const metadata: Metadata = {
@@ -11,11 +10,9 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="sv">
-      <body className="bg-bg overflow-hidden">
+      <body className="bg-bg">
         <GrainOverlay />
-        <SmoothWrapper>
-          {children}
-        </SmoothWrapper>
+        {children}
       </body>
     </html>
   )
