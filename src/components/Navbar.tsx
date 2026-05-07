@@ -50,6 +50,8 @@ export default function Navbar() {
         className="lg:hidden flex flex-col gap-1.5 p-2"
         onClick={() => setOpen(!open)}
         aria-label="Öppna meny"
+        aria-expanded={open}
+        aria-controls="mobile-nav-drawer"
       >
         <span className={`w-6 h-0.5 bg-dark transition-all ${open ? 'rotate-45 translate-y-2' : ''}`} />
         <span className={`w-6 h-0.5 bg-dark transition-all ${open ? 'opacity-0' : ''}`} />
@@ -58,7 +60,7 @@ export default function Navbar() {
 
       {/* Mobile drawer */}
       {open && (
-        <div className="lg:hidden absolute top-full left-0 right-0 bg-bg/95 py-6 flex flex-col items-center gap-6">
+        <div id="mobile-nav-drawer" className="lg:hidden absolute top-full left-0 right-0 bg-bg/95 py-6 flex flex-col items-center gap-6">
           {NAV_LINKS.map(link => (
             <a
               key={link.href}
