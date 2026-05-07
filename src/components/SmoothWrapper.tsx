@@ -24,7 +24,7 @@ export default function SmoothWrapper({ children }: { children: React.ReactNode 
   }, [])
 
   return (
-    <div id="smooth-wrapper">
+    <div id="smooth-wrapper" className="overflow-hidden w-full h-screen fixed top-0 left-0">
       <div id="smooth-content">
         {children}
       </div>
