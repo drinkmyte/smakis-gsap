@@ -11,7 +11,7 @@ export default function FooterSection() {
         alt="SMAKIS"
         width={120}
         height={40}
-        className="invert"
+        className="opacity-90"
       />
 
       <p className="font-bebas text-3xl md:text-4xl max-w-lg leading-snug">

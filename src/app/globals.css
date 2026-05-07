@@ -16,6 +16,11 @@ html {
   background-color: var(--color-bg);
   color: var(--color-dark);
   font-family: var(--font-inter);
+  overflow-x: hidden;
+}
+
+body {
+  overflow-x: hidden;
 }
 
 /* Hide scrollbar globally — ScrollSmoother manages scroll */

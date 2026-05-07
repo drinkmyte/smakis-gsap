@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useRef } from 'react'
+import Image from 'next/image'
 import { gsap } from 'gsap'
 import { SplitText } from 'gsap/SplitText'
 
@@ -73,6 +74,14 @@ export default function HeroSection() {
 
       {/* Text overlay */}
       <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
+        <Image
+          src="/images/logo.png"
+          alt="SMAKIS"
+          width={160}
+          height={54}
+          className="mb-6 drop-shadow-2xl"
+          priority
+        />
         <h1
           ref={titleRef}
           className="font-bebas text-[18vw] md:text-[14vw] leading-none text-bg hatched select-none"
