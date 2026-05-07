@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { VALUES } from '@/constants'
@@ -12,13 +12,22 @@ export default function ValuesSection() {
   const wordsRef = useRef<HTMLDivElement>(null)
   const copyRef = useRef<HTMLParagraphElement>(null)
 
+  // SSR-safe: start true (mobile), flip after hydration
+  const [isMobile, setIsMobile] = useState(true)
+  useEffect(() => {
+    const mq = window.matchMedia('(max-width: 1023px)')
+    setIsMobile(mq.matches)
+    const handler = (e: MediaQueryListEvent) => setIsMobile(e.matches)
+    mq.addEventListener('change', handler)
+    return () => mq.removeEventListener('change', handler)
+  }, [])
+
   useEffect(() => {
     if (!sectionRef.current || !wordsRef.current || !copyRef.current) return
 
-    const isMobile = window.innerWidth < 1024
     const words = wordsRef.current.querySelectorAll<HTMLElement>('.value-word')
 
-    // Parallax — each word at different speed
+    // Parallax — each word at its own depth speed
     const parallaxTweens = Array.from(words).map((el, i) => {
       const speed = VALUES[i].speed * (isMobile ? 0.5 : 1)
       return gsap.to(el, {
@@ -70,7 +79,7 @@ export default function ValuesSection() {
       copyTween.scrollTrigger?.kill()
       copyTween.kill()
     }
-  }, [])
+  }, [isMobile])
 
   return (
     <section
