@@ -55,7 +55,7 @@ export default function ValuesSection() {
 
   return (
     <section ref={sectionRef} id="values"
-      className="relative min-h-screen flex flex-col items-center justify-center bg-dark text-bg px-8 py-24 overflow-hidden">
+      className="relative min-h-screen flex flex-col items-center justify-center bg-dark text-bg px-8 py-24 overflow-hidden worn-paper clip-skew-top">
 
       {/* Graffiti SVG background — EKOLOGISKT sprayed on wall */}
       <svg aria-hidden="true" preserveAspectRatio="xMidYMid slice"
@@ -82,6 +82,16 @@ export default function ValuesSection() {
         opacity: 0.08, filter: 'blur(60px)', pointerEvents: 'none',
         borderRadius: '55% 45% 60% 40%',
       }} />
+
+      {/* Stickers */}
+      <div aria-hidden="true" className="sticker sticker-dark absolute top-16 right-8 md:right-20 pointer-events-none z-20"
+        style={{ width: 'clamp(70px,7vw,96px)', fontSize: 'clamp(0.55rem,0.9vw,0.7rem)', transform: 'rotate(14deg)', animationDelay: '0.6s' }}>
+        UTAN<br />SOCKER
+      </div>
+      <div aria-hidden="true" className="sticker absolute bottom-24 left-6 md:left-16 pointer-events-none z-20"
+        style={{ width: 'clamp(60px,6vw,80px)', fontSize: 'clamp(0.5rem,0.85vw,0.65rem)', transform: 'rotate(-9deg)', animationDelay: '2s' }}>
+        ♻<br />HÅLLBART
+      </div>
 
       <p className="font-marker text-brand text-xl mb-4 relative z-10">varför smakis</p>
       <h2 className="font-bebas text-5xl md:text-7xl leading-none tracking-wide mb-20 text-center relative z-10 hatch-section">

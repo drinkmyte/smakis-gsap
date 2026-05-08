@@ -42,7 +42,7 @@ export default function BrandStatement() {
 
   return (
     <section ref={sectionRef} id="brand"
-      className="relative min-h-screen flex flex-col items-center justify-center text-center px-8 py-24 overflow-hidden">
+      className="relative min-h-screen flex flex-col items-center justify-center text-center px-8 py-24 overflow-hidden worn-paper">
 
       {/* Graffiti SVG background — spray-painted "SMAKIS" */}
       <svg aria-hidden="true" preserveAspectRatio="xMidYMid slice"

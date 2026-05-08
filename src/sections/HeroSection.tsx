@@ -77,6 +77,23 @@ export default function HeroSection() {
         </p>
       </div>
 
+      {/* Sticker — top left */}
+      <div aria-hidden="true" className="sticker absolute top-12 left-8 md:left-16 pointer-events-none"
+        style={{ width: 'clamp(64px,8vw,90px)', fontSize: 'clamp(0.55rem,1vw,0.75rem)', transform: 'rotate(-12deg)', animationDelay: '0.4s' }}>
+        <span style={{ fontSize: '1.3em', lineHeight: 1 }}>★</span>
+        SEDAN<br />1970
+      </div>
+
+      {/* Sticker — mid right */}
+      <div aria-hidden="true" className="sticker sticker-outline absolute top-1/2 right-6 md:right-20 pointer-events-none"
+        style={{ width: 'clamp(56px,6vw,76px)', fontSize: 'clamp(0.5rem,0.9vw,0.65rem)', transform: 'rotate(8deg)', animationDelay: '1.2s', border: '2.5px solid rgba(255,255,255,0.55)', color: 'rgba(255,255,255,0.7)', background: 'transparent' }}>
+        100%<br />EKOLOGISKT
+      </div>
+
+      {/* Torn tape accent — top center */}
+      <div aria-hidden="true" className="absolute top-0 left-1/2 pointer-events-none"
+        style={{ transform: 'translateX(-50%) rotate(-1deg)', width: 'clamp(80px,10vw,140px)', height: '22px', background: 'rgba(226,116,66,0.55)', filter: 'blur(0.3px)', clipPath: 'polygon(2% 0%,98% 5%,100% 95%,0% 100%)' }} />
+
       {/* Main content */}
       <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
         <Image src="/images/logo.png" alt="SMAKIS" width={160} height={54}

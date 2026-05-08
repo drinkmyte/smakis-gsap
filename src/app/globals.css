@@ -98,3 +98,70 @@ body { -ms-overflow-style: none; scrollbar-width: none; }
   0%, 100% { transform: translateY(0); }
   50%       { transform: translateY(4px); }
 }
+
+/* Marquee scroll */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.marquee-track {
+  display: flex;
+  white-space: nowrap;
+  animation: marquee 18s linear infinite;
+}
+.marquee-track:hover { animation-play-state: paused; }
+
+/* Worn paper texture — apply to any non-hero section */
+.worn-paper {
+  position: relative;
+}
+.worn-paper::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.045;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='p'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.72' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23p)'/%3E%3C/svg%3E");
+  background-size: 180px 180px;
+  mix-blend-mode: multiply;
+}
+
+/* Sticker — price tag / stamp style */
+.sticker {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  aspect-ratio: 1;
+  background: var(--color-brand);
+  color: #fff;
+  font-family: "Bebas Neue", sans-serif;
+  letter-spacing: 0.04em;
+  text-align: center;
+  line-height: 1.1;
+  box-shadow: 2px 2px 0 rgba(0,0,0,0.25), inset 0 0 0 3px rgba(255,255,255,0.15);
+  animation: sticker-wobble 3.5s ease-in-out infinite;
+  user-select: none;
+}
+.sticker-dark {
+  background: var(--color-dark);
+}
+.sticker-outline {
+  background: transparent;
+  border: 2.5px solid var(--color-brand);
+  color: var(--color-brand);
+}
+
+/* Diagonal clip variants */
+.clip-skew-bottom {
+  clip-path: polygon(0 0, 100% 0, 100% 96%, 0 100%);
+  padding-bottom: calc(2vw + 4rem);
+}
+.clip-skew-both {
+  clip-path: polygon(0 4%, 100% 0%, 100% 96%, 0 100%);
+  margin-top: -2vw;
+  padding-top: calc(2vw + 6rem);
+  padding-bottom: calc(2vw + 4rem);
+}

@@ -38,7 +38,7 @@ export default function StatsSection() {
   }, [])
 
   return (
-    <section ref={sectionRef} className="relative py-24 px-8 overflow-hidden bg-bg">
+    <section ref={sectionRef} className="relative py-24 px-8 overflow-hidden bg-bg worn-paper clip-skew-both">
 
       {/* Graffiti SVG background — spray year "1970" */}
       <svg aria-hidden="true" preserveAspectRatio="xMidYMid slice"

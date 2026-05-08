@@ -1,4 +1,6 @@
 import Navbar from '@/components/Navbar'
+import MarqueeBanner from '@/components/MarqueeBanner'
+import SkateboardParallax from '@/components/SkateboardParallax'
 import HeroSection from '@/sections/HeroSection'
 import BrandStatement from '@/sections/BrandStatement'
 import StatsSection from '@/sections/StatsSection'
@@ -13,10 +15,13 @@ export default function Home() {
   return (
     <>
       <Navbar />
+      <SkateboardParallax />
       <HeroSection />
+      <MarqueeBanner />
       <BrandStatement />
       <StatsSection />
       <FlavorCarousel />
+      <MarqueeBanner dark items={['SMAKA LIVET', 'GSAP', 'NEXT.JS', 'SCROLL ANIMATIONS', '★', 'CINEMATIC WEB', 'TAILWIND V4', '★']} />
       <ProcessSection />
       <HistorySection />
       <ValuesSection />

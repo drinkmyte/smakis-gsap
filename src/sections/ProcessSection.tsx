@@ -69,7 +69,7 @@ export default function ProcessSection() {
   }, [])
 
   return (
-    <section ref={sectionRef} id="om-oss" className="bg-brand py-24 px-8 overflow-hidden">
+    <section ref={sectionRef} id="om-oss" className="bg-brand py-24 px-8 overflow-hidden worn-paper clip-skew-top">
       <div className="max-w-5xl mx-auto">
         {/* Heading row */}
         <div className="mb-16 flex flex-col md:flex-row md:items-end md:justify-between gap-4">
