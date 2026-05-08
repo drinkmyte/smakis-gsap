@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Permanent+Marker&family=Inter:wght@400;500&display=swap');
 
 @import "tailwindcss";
 
@@ -8,8 +8,9 @@
   --color-mid:   #476C77;
   --color-bg:    #f8f7f4;
 
-  --font-bebas: "Bebas Neue", sans-serif;
-  --font-inter: "Inter", sans-serif;
+  --font-bebas:  "Bebas Neue", sans-serif;
+  --font-inter:  "Inter", sans-serif;
+  --font-marker: "Permanent Marker", cursive;
 }
 
 html {
@@ -23,11 +24,11 @@ body {
   overflow-x: hidden;
 }
 
-/* Hide scrollbar globally — ScrollSmoother manages scroll */
+/* Hide scrollbar globally */
 body::-webkit-scrollbar { display: none; }
 body { -ms-overflow-style: none; scrollbar-width: none; }
 
-/* Hatched shadow utility class */
+/* Hatched shadow — orange step-shadow on text */
 .hatched {
   text-shadow:
     1px 1px 0 var(--color-brand),
@@ -37,7 +38,29 @@ body { -ms-overflow-style: none; scrollbar-width: none; }
     5px 5px 0 var(--color-brand);
 }
 
+/* Spray-paint halo — used on hero/section bg accent text */
+.spray-halo {
+  text-shadow:
+    0 0 20px currentColor,
+    0 0 40px currentColor,
+    0 0 80px currentColor;
+  filter: blur(0.4px);
+}
+
+/* Diagonal section clip — top edge angled */
+.clip-skew-top {
+  clip-path: polygon(0 4%, 100% 0%, 100% 100%, 0% 100%);
+  margin-top: -2vw;
+  padding-top: calc(2vw + 6rem);
+}
+
 /* Spin keyframe for FlavorCard badge */
 @keyframes spin {
   to { transform: rotate(360deg); }
+}
+
+/* Sticker wobble */
+@keyframes sticker-wobble {
+  0%, 100% { transform: rotate(-2deg); }
+  50%       { transform: rotate(-4deg) scale(1.03); }
 }
