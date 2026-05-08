@@ -87,7 +87,7 @@ export default function HistorySection() {
       {/* Section header */}
       <div className="relative z-10 max-w-5xl mx-auto mb-20">
         <p className="font-marker text-brand text-xl mb-3">historia</p>
-        <h2 className="font-bebas text-6xl md:text-8xl text-dark leading-none">
+        <h2 className="font-bebas text-6xl md:text-8xl leading-none hatch-section">
           Sedan 1970
         </h2>
       </div>

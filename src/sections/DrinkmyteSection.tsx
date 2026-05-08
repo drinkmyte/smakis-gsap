@@ -35,7 +35,7 @@ export default function DrinkmyteSection() {
         {/* Left: agency info */}
         <div className="flex flex-col gap-4">
           <p className="font-marker text-brand text-lg">konceptsida av</p>
-          <h2 className="font-bebas text-6xl md:text-8xl text-bg leading-none tracking-wide">
+          <h2 className="font-bebas text-6xl md:text-8xl leading-none tracking-wide hatch-section">
             Drinkmyte
           </h2>
           <p className="text-bg/50 text-sm leading-relaxed max-w-sm mt-2">

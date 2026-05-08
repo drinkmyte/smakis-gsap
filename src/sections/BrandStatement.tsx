@@ -77,7 +77,7 @@ export default function BrandStatement() {
       </p>
 
       <h2 ref={headlineRef}
-        className="font-bebas text-[12vw] md:text-[8vw] leading-none text-dark hatched select-none overflow-hidden relative z-10">
+        className="font-bebas text-[12vw] md:text-[8vw] leading-none hatch-section select-none overflow-hidden relative z-10">
         Smakis är det snälla varumärket
       </h2>
 

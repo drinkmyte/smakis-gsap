@@ -73,7 +73,7 @@ export default function ProcessSection() {
       <div className="max-w-5xl mx-auto">
         {/* Heading row */}
         <div className="mb-16 flex flex-col md:flex-row md:items-end md:justify-between gap-4">
-          <h2 className="font-bebas text-5xl md:text-7xl text-dark leading-none tracking-wide">
+          <h2 className="font-bebas text-5xl md:text-7xl leading-none tracking-wide hatch-section">
             Vår Historia
           </h2>
           <p className="text-dark/60 text-sm max-w-xs leading-relaxed">

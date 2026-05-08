@@ -82,8 +82,19 @@ export default function FlavorCarousel() {
     >
       <div className="absolute top-8 left-1/2 -translate-x-1/2 z-10 text-center pointer-events-none">
         <p className="font-bebas text-5xl md:text-6xl text-dark tracking-wide">Våra Smaker</p>
-        {!isDesktop && (
-          <p className="text-mid text-sm mt-1">Dra för att utforska</p>
+        {!isDesktop ? (
+          <div className="flex items-center justify-center gap-2 mt-2 text-mid text-sm">
+            <span style={{ animation: 'slideLeft 1.4s ease-in-out infinite alternate' }}>←</span>
+            <span>Dra för att utforska</span>
+            <span style={{ animation: 'slideLeft 1.4s ease-in-out infinite alternate-reverse' }}>→</span>
+          </div>
+        ) : (
+          <div className="flex items-center justify-center gap-2 mt-2 opacity-50">
+            <span className="text-mid text-xs tracking-widest uppercase" style={{ letterSpacing: '0.2em' }}>Scrolla för att bläddra</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-mid" style={{ animation: 'bounceDown 1.2s ease-in-out infinite' }}>
+              <path d="M12 5v14M5 12l7 7 7-7" />
+            </svg>
+          </div>
         )}
       </div>
 

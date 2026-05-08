@@ -28,14 +28,36 @@ body {
 body::-webkit-scrollbar { display: none; }
 body { -ms-overflow-style: none; scrollbar-width: none; }
 
-/* Hatched shadow — orange step-shadow on text */
+/* Hatched — orange step-shadow block on hero title */
 .hatched {
   text-shadow:
     1px 1px 0 var(--color-brand),
     2px 2px 0 var(--color-brand),
     3px 3px 0 var(--color-brand),
     4px 4px 0 var(--color-brand),
-    5px 5px 0 var(--color-brand);
+    5px 5px 0 var(--color-brand),
+    6px 6px 0 var(--color-brand);
+}
+
+/* Diagonal hatch fill — for section headings */
+.hatch-section {
+  -webkit-text-stroke: 2px var(--color-brand);
+  color: transparent;
+  background-image: repeating-linear-gradient(
+    -45deg,
+    var(--color-brand) 0px, var(--color-brand) 1.5px,
+    transparent 1.5px, transparent 7px
+  );
+  background-size: 7px 7px;
+  -webkit-background-clip: text;
+  background-clip: text;
+  filter: drop-shadow(4px 4px 0px rgba(226,116,66,0.25));
+}
+
+/* Outline-only variant for subheadings */
+.hatch-outline {
+  -webkit-text-stroke: 1.5px var(--color-brand);
+  color: transparent;
 }
 
 /* Spray-paint halo — used on hero/section bg accent text */
@@ -63,4 +85,16 @@ body { -ms-overflow-style: none; scrollbar-width: none; }
 @keyframes sticker-wobble {
   0%, 100% { transform: rotate(-2deg); }
   50%       { transform: rotate(-4deg) scale(1.03); }
+}
+
+/* Drag hint arrows */
+@keyframes slideLeft {
+  from { transform: translateX(-4px); opacity: 0.4; }
+  to   { transform: translateX(4px);  opacity: 1; }
+}
+
+/* Scroll hint bounce */
+@keyframes bounceDown {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(4px); }
 }

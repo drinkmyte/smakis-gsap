@@ -84,7 +84,7 @@ export default function ValuesSection() {
       }} />
 
       <p className="font-marker text-brand text-xl mb-4 relative z-10">varför smakis</p>
-      <h2 className="font-bebas text-5xl md:text-7xl text-bg leading-none tracking-wide mb-20 text-center relative z-10">
+      <h2 className="font-bebas text-5xl md:text-7xl leading-none tracking-wide mb-20 text-center relative z-10 hatch-section">
         Det vi tror på
       </h2>
 
@@ -94,7 +94,7 @@ export default function ValuesSection() {
             className={`value-item flex items-center gap-5 ${i % 2 === 0 ? 'self-start' : 'self-end text-right flex-row-reverse'}`}>
             <span className="font-bebas text-2xl text-brand/40 leading-none flex-shrink-0">0{i + 1}</span>
             <div className={`flex flex-col ${i % 2 === 0 ? 'items-start' : 'items-end'}`}>
-              <p className="font-bebas text-[8vw] md:text-[4.5vw] leading-none select-none text-bg">
+              <p className="font-bebas text-[8vw] md:text-[4.5vw] leading-none select-none hatch-section" style={{ filter: 'drop-shadow(3px 3px 0px rgba(226,116,66,0.18))' }}>
                 {value.label}
               </p>
               <p className="font-marker text-xs text-brand/60 mt-1">
