@@ -57,16 +57,21 @@ function playSpraySound() {
 export default function FlavorCard({ flavor }: FlavorCardProps) {
   const soundPlaying = useRef(false)
 
-  const handleMouseEnter = (e: React.MouseEvent<HTMLDivElement>) => {
-    e.currentTarget.style.transform = 'rotate(0deg) scale(1.06)'
+  const triggerSound = (el: HTMLElement) => {
+    el.style.transform = 'rotate(0deg) scale(1.06)'
     if (!soundPlaying.current) {
       soundPlaying.current = true
       playSpraySound()
-      // Allow retriggering once the burst has finished
       setTimeout(() => { soundPlaying.current = false }, 350)
     }
   }
+
+  const handleMouseEnter = (e: React.MouseEvent<HTMLDivElement>) => triggerSound(e.currentTarget)
   const handleMouseLeave = (e: React.MouseEvent<HTMLDivElement>) => {
+    e.currentTarget.style.transform = `rotate(${flavor.tilt}deg) scale(1)`
+  }
+  const handleTouchStart = (e: React.TouchEvent<HTMLDivElement>) => triggerSound(e.currentTarget)
+  const handleTouchEnd   = (e: React.TouchEvent<HTMLDivElement>) => {
     e.currentTarget.style.transform = `rotate(${flavor.tilt}deg) scale(1)`
   }
 
@@ -79,6 +84,8 @@ export default function FlavorCard({ flavor }: FlavorCardProps) {
       }}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
+      onTouchStart={handleTouchStart}
+      onTouchEnd={handleTouchEnd}
     >
       {/* Product image */}
       <div className="relative w-56 h-80 md:w-64 md:h-96">
