@@ -22,7 +22,7 @@ export default function FlavorCarousel() {
     return () => mq.removeEventListener('change', handler)
   }, [])
 
-  // Card entrance snap — runs once, after pin is established (refreshPriority: -1 on pin)
+  // Card entrance snap WITH SPRAY SOUND — runs once, after pin is established (refreshPriority: -1 on pin)
   useEffect(() => {
     if (!trackRef.current) return
     const cards = trackRef.current.querySelectorAll<HTMLElement>('.flavor-card')
@@ -37,6 +37,24 @@ export default function FlavorCarousel() {
         trigger: sectionRef.current,
         start: 'top 80%',
         once: true,
+        onEnter: () => {
+          // Synthesize spray sound once
+          try {
+            const ctx = new (window.AudioContext || (window as any).webkitAudioContext)()
+            const buf = ctx.createBuffer(1, ctx.sampleRate * 0.4, ctx.sampleRate)
+            const d = buf.getChannelData(0)
+            for (let i = 0; i < d.length; i++) d[i] = (Math.random() * 2 - 1) * (1 - i / d.length)
+            const src = ctx.createBufferSource()
+            src.buffer = buf
+            const g = ctx.createGain()
+            g.gain.setValueAtTime(0.15, 0)
+            src.connect(g)
+            g.connect(ctx.destination)
+            src.start()
+          } catch (e) {
+            // Audio API not supported — silent fail
+          }
+        },
       },
     })
     return () => {
