@@ -8,7 +8,7 @@ export const FLAVORS: Flavor[] = [
   { id: 'ice-tea-persika', name: 'Ice Tea Persika',  image: '/images/products/ice-tea-persika.png', tilt: -6 },
   { id: 'ice-tea-citron',  name: 'Ice Tea Citron',   image: '/images/products/ice-tea-citron.png',  tilt:  7 },
   { id: 'lingon-blabar',   name: 'Lingon & Blåbär',  image: '/images/products/lingon-blabar.png',   tilt: -5 },
-  { id: 'smoothie',        name: 'Smoothie 3L',      image: '/images/products/smoothie.png',        tilt:  8 },
+  { id: 'smoothie',        name: 'Smoothie 3L',      image: '/images/products/smoothie.png',        tilt:  8, badge: 'Vatten' },
 ]
 
 export const VALUES: Value[] = [

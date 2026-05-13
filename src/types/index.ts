@@ -4,6 +4,7 @@ export interface Flavor {
   name: string
   image: string
   tilt: number
+  badge?: string
 }
 
 export interface Value {

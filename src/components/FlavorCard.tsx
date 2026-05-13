@@ -108,8 +108,8 @@ export default function FlavorCard({ flavor }: FlavorCardProps) {
         className="absolute -top-4 -right-4 w-20 h-20 bg-brand rounded-full flex items-center justify-center"
         style={{ animation: 'spin 20s linear infinite' }}
       >
-        <span className="font-bebas text-sm text-bg text-center leading-tight tracking-wide">
-          100%<br />Frukt
+        <span className="font-bebas text-base text-bg text-center leading-tight tracking-wide">
+          {flavor.badge ? flavor.badge : <>100%<br />Frukt</>}
         </span>
       </div>
     </div>
